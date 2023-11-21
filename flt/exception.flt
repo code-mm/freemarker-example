@@ -1,0 +1,22 @@
+/**
+ * 系统中的错误信息
+ */
+public enum ErrorInfo {
+<#list infos as param>
+    /**
+     * ${param.message}
+     */
+    ${param.name}(new MyException("${param.message}",${param.code})),
+</#list>
+
+    ;
+    private final  MyException exception;
+
+    ErrorInfo(MyException e) {
+        exception = e;
+    }
+
+    public MyException getException() {
+        return exception;
+    }
+}

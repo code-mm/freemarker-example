@@ -1,0 +1,3 @@
+<#list datas as param>
+ ${param.name}
+</#list>
